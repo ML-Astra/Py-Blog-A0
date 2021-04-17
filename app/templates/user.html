@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="center-block"><img src="{{user.avatar(128)}}" alt="User Gravatar"></div>
+        <div class="center-block" style="padding-top:35px; padding-left:5px;"> <h1 align="middle">  User: {{ user.username }}</h1></div>
+    </div>
+    <br>
+    {%if user.about_me%} <h3>{{user.about_me}}</h3> {%endif%}
+    {%if user.last_seen%} <h3>Last Seen: {{user.last_seen}}</h3> {%endif%}
+    {% if user == current_user %}
+    <a href="{{url_for('edit_profile')}}" class="btn btn-info">Edit Profile</a>
+    {% endif %}
+    <hr>
+    {% for post in posts %}
+    <div class="card text-center" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{post.author.username}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">says: </h6>
+            <p class="card-text">{{post.body}}</p>
+        </div>
+    </div>
+    <br>
+
+    {% endfor %}
+</div>
+{% endblock %}

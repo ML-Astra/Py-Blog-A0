@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid" style="justify-content:center;">
+
+
+    <h1 style="text-align:center"><i class="fas fa-bug" style="text-align:center; font-size:52px"></i> <br>500 - SERVER ERROR</h1>
+    <h3 style="text-align:center">Okay, something broke... Don't worry the admin will fix it...probably :D</h3>
+    <br>
+    <p style="text-align:center"><a href="{{url_for('index')}}" class="btn btn-secondary text-center"> <i
+            class="fas fa-home"></i> Home</a></p>
+
+</div>
+
+{% endblock %}

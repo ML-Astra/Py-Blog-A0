@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{%block content%}
+<div class="container-fluid">
+    <h1>Register</h1>
+    <form action="" method="post">
+        {{form.hidden_tag()}}
+        <div class="form-group">
+            <label for="username">{{form.username.label}}</label>
+            <input id="username" name="username" required="" value="" type="text" class="form-control"
+                   placeholder="Username!">
+            {%for error in form.username.errors%}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+            {%endfor%}
+        </div>
+        <div class="form-group">
+            <label for="email">{{form.email.label}}</label>
+            <input type="email" id="email" required="" name="email" value="" class="form-control"
+                   placeholder="Email address!">
+            {%for error in form.email.errors%}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+            {%endfor%}
+        </div>
+        <div class="form-group">
+            <label for="password">{{form.password.label}}</label>
+            <input name="password" type="password" class="form-control" id="password" value="" required=""
+                   placeholder="Password!">
+            {%for error in form.password.errors%}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+            {%endfor%}
+        </div>
+        <div class="form-group">
+            <label for="password2">{{form.password2.label}}</label>
+            <input name="password2" type="password" required="" class="form-control" id="password2" value=""
+                   placeholder="Verify Password!">
+            {%for error in form.password2.errors%}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+            {%endfor%}
+        </div>
+        <input type="submit" id="submit" name="submit" class="btn btn-primary" value="Submit">
+        <!--<button id="submit" name="submit" type="submit" value="Submit" class="btn btn-primary">Submit</button>-->
+    </form>
+</div>
+{%endblock%}

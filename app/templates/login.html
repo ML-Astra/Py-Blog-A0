@@ -1,0 +1,38 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="container-fluid">
+    <h1>You wish to enter?</h1>
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <label for="username">{{form.username.label}}</label>
+            <input id="username" name="username" required="" value="" type="text" class="form-control"
+                   placeholder="Username!">
+            {%for error in form.username.errors%}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+            {%endfor%}
+        </div>
+        <div class="form-group">
+            <label for="password">{{form.password.label}}</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Password!"
+                   required="" value="">
+            {%for error in form.password.errors%}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+            {%endfor%}
+        </div>
+        <div class="form-check">
+            <input type="checkbox" name="rememberMe" class="form-check-input" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">{{form.rememberMe.label}}</label>
+        </div>
+        <input type="submit" id="submit" name="submit" class="btn btn-primary" value="Submit">
+
+
+    </form>
+    <p>Ya new round here?  <a class="btn btn-primary" href="{{url_for('register')}}">Click Here!</a> </p>
+</div>
+{% endblock %}
