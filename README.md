@@ -9,3 +9,6 @@ If you have any tips or tricks please open a github issue and tell/show me where
 Thanks in advance!
 
 -Astra
+
+Notes:
+- This entire project is being done in pycharm hence the .idea folder.
